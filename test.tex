@@ -1,0 +1,31 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass{article} % use larger type; default would be 10pt
+\usepackage{enumitem}
+\usepackage{outlines}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\begin{multline*}
+			\sum_{n=0}^\infty \frac{1}{T_{mn+r}} = 
+			\frac{2}{m} \sum\limits_{0<j<m/2} \left\{ 
+			\left[
+				\cos \left(\frac{2 \pi j (r+1)}{m} \right) - \cos \left( \frac{2 \pi j r}{m} \right)
+			\right] \right. \\
+			\left. \cdot \ln \left[ 
+			2 - \cos \left( \frac{2 \pi j}{m} \right)
+			\right]
+			- \left[ \sin \left(\frac{2 \pi j (r+1)}{m} \right) - \sin \left( \frac{2 \pi j r}{m} \right) \right] \right. \\
+			\left. \cdot \frac{\pi (m - 2j)}{m}
+			\right\} + 2 \delta_{mr} + \varepsilon_m \cdot (-1)^{r+1} 2 \ln(n)
+\end{multline*}
+
+\end{document}

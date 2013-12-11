@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%\newtheorem{tetrahedral}{Printed output}
+
+\rhead{Andrew Gleeson\\
+\today}
+\begin{document}
+
+
+\subsection*{Inductive proof of the tetrahedral number formula}
+A tetrahedral number of size $n$ is the sum of the triangular numbers from 1 to $n$.
+
+\subsubsection*{Givens}
+
+\begin{enumerate}
+	\item Let $g(n)$ be the $n$th triangular number.
+
+		$g(n) = \frac{n(n+1)}{2}$
+	\item Let $F(n)$ be the $n$th tetrahedral number.
+	
+		$F(n) = g(1) + g(2) + g(3) + \cdots + g(n)$
+	\item Assume:
+	
+		$F(n) = \frac{n(n+1)(n+2)}{6}$
+		
+	\item Let $F(n)$ be the $n$th tetrahedral number.
+	
+		$F(n) = g(1) + g(2) + g(3) + \cdots + g(n)$
+	
+
+\end{enumerate}
+
+\subsubsection*{Base Case}
+
+\begin{enumerate}
+	
+	\item $F(1) = \frac{1(1+1)(1+2)}{6} = 1$
+	\item $g(1) = \frac{1(1+1)}{2} = 1$
+	\item $F(1) = g(1) = 1$
+
+\end{enumerate}
+
+\subsubsection*{Inductive Step}
+
+\begin{enumerate}
+	
+	\item $F(n + 1) =  g(1) + g(2) + g(3) + \cdots + g(n) + g(n+1)$
+	\item $F(n + 1) =  F(n) + g(n+1)$
+	\item $F(n + 1) =   \frac{n(n+1)(n+2)}{6} + \frac{(n+1)(n+2)}{2}$
+	\item $F(n + 1) =   \frac{n(n+1)(n+2)}{6} + \frac{3(n+1)(n+2)}{6}$
+	\item $F(n + 1) =   \frac{n(n+1)(n+2) + 3(n+1)(n+2)}{6}$
+	\item $F(n + 1) =   \frac{(n+1)(n+2) (n+3)}{6}$
+
+\end{enumerate}
+
+\begin{center}$\therefore F(n) = \frac{n(n+1)(n+2)}{6}$ \end{center}
+
+\end{document}

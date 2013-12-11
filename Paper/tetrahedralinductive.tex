@@ -1,0 +1,30 @@
+\subsection*{Inductive proof of the tetrahedral number formula}
+
+Let $F(n)$ be the $n$th tetrahedral number, and $g(n)$ be the $n$th trianhular
+number. By definition, $F(n) = g(1)+g(2)+g(3)+\ldots+g(n)$
+
+\subsubsection*{Claim}
+\begin{align*}
+F(n) = \frac{n(n+1)(n+2)}{6}
+\end{align*}
+
+\subsubsection*{Proof: Induction on $n$}
+\quad\textbf{n=1}
+\begin{align*}
+F(1)=g(1)=1\\
+F(1)=\frac{(1)(2)(3)}{6}=1
+\end{align*}
+\quad\textbf{Inductive Step}\\
+
+Assume $F(k) = \frac{k(k+1)(k+2)}{6}$. We want to show that $F(k+1) =
+\frac{(k+1)(k+2)(k+3)}{6}$
+\begin{align*}
+F(k + 1) =  g(1) + g(2) + g(3) + \cdots + g(k) + g(k+1)\\
+	 F(k + 1) =  F(k) + g(k+1)\\
+	 F(k + 1) =   \frac{k(k+1)(k+2)}{6} + \frac{(k+1)(k+2)}{2}\\
+	 F(k + 1) =   \frac{k(k+1)(k+2)}{6} + \frac{3(k+1)(k+2)}{6}\\
+	 F(k + 1) =   \frac{k(k+1)(k+2) + 3(k+1)(k+2)}{6}\\
+	 F(k + 1) =   \frac{(k+1)(k+2) (k+3)}{6}
+\end{align*}
+
+\begin{center}$\therefore F(n) = \frac{n(n+1)(n+2)}{6}$ \end{center}

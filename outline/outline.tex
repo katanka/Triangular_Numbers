@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{outlines}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\setenumerate[1]{label=\Roman*.}
+\setenumerate[2]{label=\Alph*.}
+\setenumerate[3]{label=\roman*.}
+\setenumerate[4]{label=\alph*.}
+\setenumerate[5]{label=\arabic*.}
+
+
+\newcommand{\tri}[2] {
+  #1^{\Delta #2}}
+
+\begin{document}
+
+\title{Triangular Numbers Outline}
+\author{Andrew Gleeson}
+
+\maketitle
+
+\begin{outline}[enumerate]
+
+\1 Introduction  
+	
+	\2 Triangular numbers can be graphically represented as the number of discrete points bounded by an equilateral 45-45-90 triangle.
+	\2  They are numbers of the form $\frac{n(n+1)}{2}$ where $n$ is a positive integer. They can also be thought of as the sum of integers from 1 to $n$.
+	\2 They show up surprisingly often across mathematics, and have some very nice properties.
+	\2 They can be generalized to simplex numbers, which are analogous to triangular numbers in any dimension.
+\1 Why do we care?
+	\2 The concept of triangular numbers is intriguing. Most people are very familiar with square numbers ($n^2$), but we don't put much thought into why a square is chosen as the shape. Geometrically, there are other very interesting shapes. Two shapes that stand out are the triangle, which has the least number of verticies required to bound an area in two-dimensional space, and the circle, which has an infinite number of vertices. All other polygons are somewhere between the two. So, it would seem that triangles should be similarly important with squares.
+	\2 The triangular number $T_n$ can be represented a variety of ways, which suggests broad applicability.
+		\3 $\sum_{i=1}^{n} i$
+		\3 $\frac{n(n+1)}{2}$
+		\3 ${n+1 \choose 2}$
+	\2 The places in which triangular numbers are found seem to divide into two groups: they are either elementary, like the sums of positive integers, or very advanced, like complex analysis.
+	\2 Triangular numbers have some very interesting properties, which will be covered later.
+	\pagebreak
+\1 Properties of Triangular Numbers
+	\2 Elementary Properties
+		\3 The total number of cables necessary to fully connect a network of $n$ computers is $T_{n-1}$
+		\3 There is a countably infinite number of triangular numbers.
+		\3 $T_n-T_{n-1} = n$
+		\3 $T_n + T_{n-1} = n^2$
+		\3 $3T_n + T_{n-1} = T_{2n}$ \\\\ Richard K. Guy, cited in (Nelson 104)
+		\3 $T_n - T_{n-k} = \frac{k}{2}(2n+1-k)$
+			\4  $\forall c \in \mathbb{Z}^+ \wedge k \ge 2  \:\: \nexists\:\: T_n - T_{n-k}= c^2$\\
+			The difference of two triangular numbers more than two apart cannot be a perfect square. \\\\
+			Sylvester, J. J.  and F. Franklin. ``A Constructive Theory of Partitions, Arranged in Three Acts, an Interact and an Exodion.'' American Journal of Mathematics 
+			Vol. 5, No. 1 (1882), pp. 251-330
+		\3 $(T_n)^2 = \sum_{i=1}^n i^3$
+		\3 $T_{a+b} = T_a + T_b + 2ab$
+		\3 $T_{ab} = T_aT_b + T_{a-1}T_{b-1}$
+		\3 $n^2 = T_{n+r} \Rightarrow n$ is a balancing number with balancer $r$.\\\\
+			Jones, Michael A. ``Proof Without Words: The Square of a Balancing Number Is a Triangular Number''
+			The College Mathematics Journal Vol. 43, No. 3 (May 2012), p. 212
+		\3 An integer n is triangular iff $8n+1$ is a square.
+	\2 Less elementary properties
+		\3 $n = \Delta + \Delta + \Delta$\\Any positive integer $n$ is the sum of three or fewer triangular numbers. (Gauss' Eureka Theorem)
+		\3 Infinite reciprocal sums of triangular numbers
+			\4 $\sum_{n=1}^\infty \frac{1}{T_n} = 2$ \\\\ RBN, \textit{Mathematics Magazine}, vol. 64, no. 33 (June 1991), p. 167
+			\4 \begin{multline*}
+				\sum_{n=0}^\infty \frac{1}{T_{mn+r}} = 
+				\frac{2}{m} \sum\limits_{0<j<m/2} \left\{ 
+				\left[
+					\cos \left(\frac{2 \pi j (r+1)}{m} \right) - \cos \left( \frac{2 \pi j r}{m} \right)
+				\right] \right. \\
+				\left. \cdot \ln \left[ 
+				2 - \cos \left( \frac{2 \pi j}{m} \right)
+				\right]
+				- \left[ \sin \left(\frac{2 \pi j (r+1)}{m} \right) - \sin \left( \frac{2 \pi j r}{m} \right) \right] \right. \\
+				\left. \cdot \frac{\pi (m - 2j)}{m}
+				\right\} + 2 \delta_{mr} + \varepsilon_m \cdot (-1)^{r+1} 2 \ln(n)
+			\end{multline*}
+			\begin{itemize}
+				\item $\sum_{n=0}^\infty \frac{1}{T_{2n+2}} = 2 - 2 \ln 2$
+				\item $\sum_{n=0}^\infty \frac{1}{T_{3n+1}} = \frac{2 \pi \sqrt{3}}{9}$
+				\item $\sum_{n=0}^\infty \frac{1}{T_{4n+1}} = \frac{\pi}{4} + \frac{3}{2}\ln 2$
+				\item $\sum_{n=0}^\infty \frac{1}{T_{4n+2}} = \frac{\pi}{4} - \frac{3}{2}\ln 2$
+				\item $\sum_{n=0}^\infty \frac{1}{T_{4n+3}} = - \frac{\pi}{4} + \frac{5}{2}\ln 2$
+			\end{itemize}
+			Bruckman, Paul, Joseph B. Dence, Thomas P. Dence, and Justin Young. ``Series of Reciprocal Triangular Numbers.'' The College Mathematics Journal 44.3 (2013): 177-84.
+			
+		\3 There is no geometric sequence that contains four distinct triangular numbers.\\\\
+		Fang, Jin-Hui. "Nonexistence of a Geometrical Progression That Contains Four Triangular Numbers." Electronic Journal of Combinatorial Number Theory 7 (2007).
+		
+		\3 There are infinitely many integer solutions to the equation $T_x^2 + T_y^2 = z^2$ given that $y-x=1$. (Ulas)
+		\3 There are infinitely many non-trivial integer solutions to the equation $\frac{1}{T_x} + \frac{1}{T_y} = \frac{2}{T_z}$\\\\ Ulas, Maciej. "On Certain Diophantine Equations Related to Triangular and Tetrahedral Numbers." {\tt arXiv:0811.2477v1 [math.NT]}
+		
+		\3 The ones digit of triangular numbers repeats every 20 triangular numbers, meaning that no triangular number can end in 2, 4, 7, or 9. (Tanton)
+		\3 All even perfect numbers are triangular numbers. (Tanton)
+		
+		\3 $\sum_{k = 1}^{n} (-1)^{k+1} k^2 = (-1)^{n+1} T_n$ \\\\ Logothetti, Dave. \textit{Mathematics Magazine}, vol. 60, no. 5 (Dec 1987), p. 291
+		
+		\3 $\sum_{k = 0}^{n} (-1)^k (n-k)^2 = T_n$ \\\\ Snover, Steven L. \textit{Mathematics Magazine}, vol. 65, no. 2 (April 1992), p. 90
+		
+		\3 $\sum_{k=1}^n (2k-1)^3 = T_{2n^2-1}$ \\\\ Zerger, Monte J. \textit{Mathematics Magazine}, cited in Nelsen, Roger B. Proofs without Words: Exercises in Visual Thinking. Washington, D.C.: Mathematical Association of America, 1993, p. 91
+		
+		\3 $(2n+1)^2 = 8T_n +1$ (Landauer)
+		\3 $(2n)^2 = 8T_{n-1} + 4n$ \\\\ Landauer, Edwin G. \textit{Mathematics Magazine}, vol. 58, no. 4 (Sept 1985), pp. 203, 236.
+		\3 $T_n - O_{n-1} = T_{n-2}$; $O_n$ is the $n$th odd number,
+		
+		
+\1 Generalization to the $n$th dimension - Simplicial Numbers
+	\2 A simplex is the analog of a triangle for any number of dimensions. For example, in three dimensions, the simplex is a tetrahedron. In this manner, we can expand the concept of a triangular to a tetrahedral number, and beyond. Because a triangle number is the sum of numbers 1 to $n$, a tetrahedral number is the sum of triangular numbers $T_1$ to $T_n$.
+	\2 To avoid confusion, new notation is adopted: the $n$th simplicial number in the $d$th dimension is represented as $\tri{n}{d}$
+		\3 Triangular numbers, which previously were only noted by $T_n$, can now also be noted as $\tri{n}{2}$
+		\3 Tetrahedral numbers are $\tri{n}{3}$
+	\2 Tetrahedral numbers
+		\3 Tetrahedral numbers can be graphically represented as the number of discrete points bounded by a trirectangular tetrahedron.
+		\3 The $n$th tetrahedral number is the sum of the first $n$ triangular numbers, $\sum_{i=1}^n \tri{i}{2}$
+		\3 This can be expanded to $\tri{n}{3} = \frac{n(n+1)(n+2)}{6}$.
+		\3 It can also be expressed as ${n+2 \choose 3}$
+	\2 Properties of simplicial numbers
+		\3 $\tri{n}{d} = {n+d-1 \choose d}$
+		\3 The d-simplicial numbers are found in the $d+1$th column of Pascal's Triangle.
+		\3 $\tri{n}{d} = \sum_{i=1}^{n} \tri{i}{d-1}$
+		\3 $\sum_{n=1}^{\infty} \frac{1}{\tri{n}{d}} = \frac{d}{d-1}$
+		
+		
+		
+\1 General Citations
+	\2 ``Triangular Numbers'', OEIS Foundation Inc. (2011), The On-Line Encyclopedia of Integer Sequences, http://oeis.org/A000217.
+	\2 ``Tetrahedral Numbers'', OEIS Foundation Inc. (2011), The On-Line Encyclopedia of Integer Sequences, http://oeis.org/A000292.
+	\2 Tanton, James. ``A Dozen Questions about Triangular Numbers.'' Math Horizons 13 (2005).
+			
+\end{outline}
+\end{document}

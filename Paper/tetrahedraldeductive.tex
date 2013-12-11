@@ -1,0 +1,45 @@
+\subsection*{Deductive proof of the tetrahedral number formula}
+\subsubsection*{Proof}
+
+%\begin{proof}
+
+%\end{proof}
+
+\begin{enumerate}
+	\item Let $g(n)$ be the $n$th triangular number.
+
+		$g(n) = \frac{n(n+1)}{2}$
+	\item Let $F(n)$ be the $n$th tetrahedral number.
+	
+		$F(n) = \sum\limits_{i=1}^n g(i)$
+	\item Substitute:
+		
+		$F(n) = \sum\limits_{i=1}^n \frac{i(i+1)}{2}$
+	\item Distribute:
+	
+		$F(n) = \sum\limits_{i=1}^n \frac{i^2}{2} + \frac{i}{2}$
+	\item Split:
+	
+		$F(n) = \sum\limits_{i=1}^n \frac{i^2}{2} + \sum\limits_{i=1}^n \frac{i}{2}$
+	\item Take out constants:
+	
+		$F(n) = \frac{1}{2} \sum\limits_{i=1}^n i^2 + \frac{1}{2} \sum\limits_{i=1}^n i$
+	\item Substitute known formulas for sums:
+	
+		$F(n) = \frac{1}{2} \left( \frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2} \right) $
+	\item Add:
+	
+		$F(n) = \frac{1}{2} \left( \frac{n(n+1)(2n+1) + 3n(n+1)}{6} \right) $
+	\item Factor:
+	
+		$F(n) = \frac{1}{2} \left( \frac{n(n+1) ((2n+1) + 3))}{6} \right) $
+	\item Simplify:
+	
+		$F(n) = \frac{1}{2} \left( \frac{n(n+1) (2n+4 )}{6} \right) $
+	\item Simplify:
+	
+		$F(n) = \frac{1}{2} \left( \frac{2n(n+1) (n+2 )}{6} \right) $
+
+\end{enumerate}
+
+\begin{center}$\therefore F(n) = \frac{n(n+1)(n+2)}{6}$ \end{center}
